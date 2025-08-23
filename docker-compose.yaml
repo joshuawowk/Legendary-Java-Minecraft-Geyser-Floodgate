@@ -13,7 +13,7 @@ services:
       - 19132:19132
       - 19132:19132/udp
     volumes:
-      - minecraft:/minecraft
+      - /docker/mc-3/minecraft:/minecraft
     stdin_open: true # docker run -i
     tty: true # docker run -t
     entrypoint: [ "/bin/bash", "/scripts/start.sh" ]
@@ -36,6 +36,6 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
-volumes:
-  minecraft:
-    driver: local
+# volumes:
+#   minecraft:
+#     driver: local
