@@ -29,6 +29,13 @@ services:
       #NoPermCheck: "Y" # Optional flag to skip permissions check
       #NoViaVersion: "Y" # Optional flag to disable ViaVersion plugin
       #QuietCurl: "Y" # Optional flag to reduce curl log output by suppressing progress meter
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 volumes:
   minecraft:
     driver: local
