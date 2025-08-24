@@ -12,6 +12,7 @@ services:
       - 25565:25565
       - 19132:19132
       - 19132:19132/udp
+      - 25575:25575
     volumes:
       - /docker/mc-3/minecraft:/minecraft
     stdin_open: true # docker run -i
